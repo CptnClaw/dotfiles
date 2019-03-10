@@ -207,7 +207,8 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 #assign [class="Firefox"] $ws1
 #assign [class="lyx"] $ws2
 assign [class="Lollypop"] $ws0
-#assign [class="TelegramDesktop"] $ws9
+assign [class="Feedreader"] $ws5
+assign [class="TelegramDesktop"] $ws9
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -314,6 +315,8 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec --no-startup-id feedreader
+exec --no-startup-id telegram-desktop
 
 # KEYBOARD LAYOUTS
 exec_always setxkbmap -layout us,il -option 'grp:alt_shift_toggle'
