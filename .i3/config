@@ -317,6 +317,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id feedreader
 exec --no-startup-id telegram-desktop
+exec --no-startup-id xfce4-clipman &
 
 # KEYBOARD LAYOUTS
 exec_always setxkbmap -layout us,il -option 'grp:alt_shift_toggle'
