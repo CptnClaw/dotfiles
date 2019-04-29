@@ -96,7 +96,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 
-alias configit='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+alias configit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
 
 xhost +local:root > /dev/null 2>&1
 

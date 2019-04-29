@@ -77,7 +77,7 @@ volume-max = #bf616a
 [bar/mainbar-i3]
 ;https://github.com/jaagr/polybar/wiki/Configuration
 
-;monitor = ${env:MONITOR}
+monitor = eDP1
 monitor-fallback = HDMI1
 monitor-strict = false
 override-redirect = false
@@ -121,15 +121,14 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = xkeyboard2 arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 arch-aur-updates blueman networkmanager zipcode killallvlc arrow6 date battery
-;modules-right = arrow3 memory2 arrow3 cpu2 arrow4 pavolume arrow6 date
-;modules-right = battery memory2 xkeyboard2
+modules-right = xkeyboard2 arrow1 networkspeedup networkspeeddown arrow2 memory2 arrow3 cpu2 arrow4 pavolume arrow5 blueman networkmanager zipcode killallvlc arrow6 date battery
+#arch-aur-updates
 
 separator = 
 
 ;dim-value = 1.0
 
-tray-position = 
+tray-position = none
 tray-detached = false
 tray-maxsize = 20
 tray-background = ${colors.background}
@@ -151,8 +150,8 @@ enable-ipc = true
 click-left =
 click-middle =
 click-right =
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = 
+scroll-down = 
 double-click-left =
 double-click-middle =
 double-click-right =
@@ -199,7 +198,7 @@ enable-click = true
 
 ; Create scroll handlers used to cycle workspaces
 ; Default: true
-enable-scroll = true
+enable-scroll = false
 
 ; Wrap around when reaching the first/last workspace
 ; Default: true
@@ -365,7 +364,7 @@ click-left="terminator -e 'sudo pacman -Syu'"
 
 [module/blueman]
 type = custom/text
-click-left = "killall blueman-manager || blueman-manager"
+click-left = "blueman-manager"
 interval = 1000
 content = " "
 content-foreground = #ededed
@@ -458,8 +457,8 @@ bar-empty = ─
 [module/battery]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+battery = BAT0
+adapter = AC
 full-at = 100
 
 format-charging = <animation-charging> <label-charging>
@@ -1183,6 +1182,7 @@ format-background = ${colors.background}
 ;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
 type = internal/xkeyboard
 blacklist-0 = num lock
+blacklist-1 = caps lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
