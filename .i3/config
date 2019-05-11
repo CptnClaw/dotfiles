@@ -12,7 +12,8 @@ focus_wrapping no
 font xft:URWGothic-Book 11
 floating_modifier $mod
 focus_follows_mouse yes
-for_window [urgent=latest] focus
+#for_window [urgent=latest] focus
+focus_on_window_activation none
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -36,6 +37,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker i3lock
 exec --no-startup-id telegram-desktop
+exec --no-startup-id i3-msg 'workspace 5; exec terminator -e newsboat; workspace 1'
 exec_always --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id xinput set-prop 12 305 1
@@ -57,13 +59,14 @@ bindsym $mod+Shift+c exec subl /home/eyal/.i3/config /home/eyal/.config/polybar/
 bindsym $mod+c exec galculator
 bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+e exec pcmanfm
-bindsym $mod+m exec lollypop
+bindsym $mod+m exec terminator -e cmus
 bindsym $mod+n exec simplenote
 bindsym Print exec xfce4-screenshooter
-bindsym $mod+Shift+y exec mpv "$(xclip -out)";exec notify-send "starting $(xclip -out)"
+bindsym $mod+Shift+y exec dmenu_youtube
+bindsym $mod+Shift+g exec dmenu_games
+bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+m exec pavucontrol
-bindsym $mod+Shift+v exec arandr
 bindsym $mod+Tab exec --no-startup-id i3lock
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
