@@ -1,0 +1,16 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+SELECTED=$(find $HOME -type f \
+-name '*.mkv' \
+-o -name '*.mp4' \
+-o -name '*.wmv' \
+-o -name '*.flv' \
+-o -name '*.webm' \
+-o -name '*.mov' \
+-o -name '*.avi' \
+ | dmenu -i -l 30)
+
+mpv "$SELECTED"

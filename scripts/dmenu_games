@@ -1,0 +1,10 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+RUNNERS=$HOME/Games/runners/
+
+SELECTED=$(ls $RUNNERS | dmenu -i -l 30)
+
+exec $RUNNERS"$SELECTED"
