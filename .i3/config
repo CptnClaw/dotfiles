@@ -37,11 +37,9 @@ exec --no-startup-id dropbox
 exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker i3lock
 exec --no-startup-id telegram-desktop
-exec --no-startup-id i3-msg 'workspace 5; exec terminator -e newsboat; workspace 1'
+exec --no-startup-id i3-msg 'workspace 5; exec xfce4-terminal --hide-menubar -x newsboat; workspace 1'
 exec_always --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
-exec --no-startup-id xinput set-prop 12 305 1
-exec --no-startup-id xinput set-prop 12 304 1
 exec_always --no-startup-id setxkbmap -layout us,il -option 'grp:alt_shift_toggle'
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -61,10 +59,11 @@ bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+e exec pcmanfm
 bindsym $mod+m exec terminator -e cmus
 bindsym $mod+n exec simplenote
-bindsym Print exec xfce4-screenshooter
+bindsym Print exec xfce4-clipman & xfce4-screenshooter
 bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
+bindsym $mod+Shift+s exec dmenu_small_scripts
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec --no-startup-id i3lock

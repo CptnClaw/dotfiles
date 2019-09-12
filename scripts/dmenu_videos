@@ -3,7 +3,7 @@
 unset LANG
 source /etc/profile.d/locale.sh
 
-SELECTED=$(find $HOME -type f \
+SELECTED=$(find $HOME/Videos -type f \
 -name '*.mkv' \
 -o -name '*.mp4' \
 -o -name '*.wmv' \
@@ -13,4 +13,8 @@ SELECTED=$(find $HOME -type f \
 -o -name '*.avi' \
  | dmenu -i -l 30)
 
-mpv "$SELECTED"
+if [ "$SELECTED" ]; then
+	echo "$SELECTED" >> $HOME/Videos/WATCHED
+	echo "$SELECTED" >> $HOME/Videos/HISTORY
+	mpv "$SELECTED"
+fi
