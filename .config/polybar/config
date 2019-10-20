@@ -364,7 +364,7 @@ click-left="terminator -e 'sudo pacman -Syu'"
 
 [module/blueman]
 type = custom/text
-click-left = "blueman-manager"
+click-left = "terminator -e bluetoothctl"
 interval = 1000
 content = " "
 content-foreground = #ededed

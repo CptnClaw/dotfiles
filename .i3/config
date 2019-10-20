@@ -40,7 +40,6 @@ exec --no-startup-id telegram-desktop
 exec --no-startup-id i3-msg 'workspace 5; exec xfce4-terminal --hide-menubar -x newsboat; workspace 1'
 exec_always --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
-exec_always --no-startup-id setxkbmap -layout us,il -option 'grp:alt_shift_toggle'
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
@@ -64,6 +63,8 @@ bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+Shift+s exec dmenu_small_scripts
+bindsym $mod+b exec dmenu_bluetooth
+bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec --no-startup-id i3lock
@@ -86,8 +87,8 @@ bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+#bindsym $mod+b workspace back_and_forth
+#bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
