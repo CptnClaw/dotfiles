@@ -70,6 +70,9 @@ bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec --no-startup-id i3lock
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
+bindsym XF86AudioPlay exec "cmus-remote -u"
+bindsym XF86AudioNext exec "cmus-remote -n"
+bindsym XF86AudioPrev exec "cmus-remote -r"
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
@@ -280,7 +283,7 @@ client.background       #2B2C2B
 ##################################
 
 # Set inner/outer gaps
-gaps inner 0
+gaps inner 9
 gaps outer 0
 # gaps inner 0
 # gaps outer 0
