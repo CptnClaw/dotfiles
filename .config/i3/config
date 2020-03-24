@@ -52,7 +52,7 @@ exec --no-startup-id xset -b
 bindsym $mod+Shift+t exec --no-startup-id compton -bf
 bindsym $mod+Shift+x --release exec --no-startup-id xkill
 bindsym $mod+Return exec terminator
-bindsym $mod+Shift+c exec subl /home/eyal/.i3/config /home/eyal/.config/polybar/config
+bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config /home/eyal/.config/polybar/config
 bindsym $mod+c exec galculator
 bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+e exec pcmanfm
