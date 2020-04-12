@@ -56,6 +56,7 @@ bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config /home/eyal/.config/p
 bindsym $mod+c exec galculator
 bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+e exec pcmanfm
+bindsym $mod+u exec pcmanfm /home/eyal/Dropbox/uni
 bindsym $mod+m exec terminator -e cmus
 bindsym $mod+n exec simplenote
 bindsym Print exec xfce4-clipman & xfce4-screenshooter
@@ -190,6 +191,7 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Arandr"] floating enable
+for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 
 
@@ -294,7 +296,7 @@ gaps outer 0
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps off
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
