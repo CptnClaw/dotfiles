@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ORIG_FILE=$HOME/Videos/youtube/ERRORS
+FILE=$HOME/Videos/youtube/ERRORS_BACKUP
+mv $ORIG_FILE $FILE
+NUM_VIDS=$(wc -l "$FILE" | cut -f 1 -d " ")
+notify-send "redownloading $NUM_VIDS video/s"
+while read line; do
+	my_youtube_dl.sh "$line"
+done < $FILE
+rm $FILE

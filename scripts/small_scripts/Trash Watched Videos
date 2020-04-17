@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mv $HOME/Videos/WATCHED $HOME/Videos/WATCHED_BACKUP
+while read line; do
+	trash "$line"
+done < $HOME/Videos/WATCHED_BACKUP
+rm $HOME/Videos/WATCHED_BACKUP
+notify-send "Watched videos trashed"
