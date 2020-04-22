@@ -79,7 +79,7 @@ volume-max = #bf616a
 
 monitor = eDP1
 monitor-fallback = HDMI1
-monitor-strict = false
+monitor-strict = true
 override-redirect = false
 bottom = false
 fixed-center = false
