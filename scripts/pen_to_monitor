@@ -1,0 +1,14 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+MYFONT="fixed"
+
+SELECTED=$(xrandr --listactivemonitors | \
+	awk '{if (NR!=1) print $NF}' | \
+	dmenu -p "Pen to monitor" -fn "$MYFONT" -i -l 30 )
+
+echo "$SELECTED"
+
+xinput map-to-output "HID 256c:006d Pen Pen (0)" "$SELECTED"
