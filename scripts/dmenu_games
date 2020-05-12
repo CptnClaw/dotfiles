@@ -5,6 +5,6 @@ source /etc/profile.d/locale.sh
 
 RUNNERS=$HOME/Games/runners/
 
-SELECTED=$(ls $RUNNERS | dmenu -i -l 30)
+SELECTED=$(ls $RUNNERS | dmenu $DMENU_STYLE -i -l 30)
 
 exec $RUNNERS"$SELECTED"

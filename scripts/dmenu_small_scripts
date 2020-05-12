@@ -3,6 +3,6 @@
 unset LANG
 source /etc/profile.d/locale.sh
 
-SELECTED=$(ls $HOME/scripts/small_scripts | dmenu -i -l 30 -p "Run:")
+SELECTED=$(ls $HOME/scripts/small_scripts | dmenu $DMENU_STYLE -i -l 30 -p "Run:")
 
 exec "$SELECTED"

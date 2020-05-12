@@ -85,7 +85,7 @@ execute_mode() {
 		return 2
 	fi
 
-	name=$(printf '%s\n' "${!DEVICES[@]}" | dmenu -p "Bluetooth $mode" "${dmenu_args[@]}")
+	name=$(printf '%s\n' "${!DEVICES[@]}" | dmenu $DMENU_STYLE -p "Bluetooth $mode" "${dmenu_args[@]}")
 	[[ $name ]] || return
 	mac=${DEVICES["$name"]}
 

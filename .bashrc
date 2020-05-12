@@ -111,6 +111,8 @@ alias ya="yay --color=always"
 alias configit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
 alias yt='XDG_CONFIG_HOME=/home/eyal/.youtube XDG_DATA_HOME=/home/eyal/.youtube newsboat'
 
+#alias dmenu="dmenu -fn Ubuntu-10 -nb '#1f2937' -sf '#212121' -sb '#82aaff' -nf '#dddddd' -h 25"
+
 xhost +local:root > /dev/null 2>&1
 
 complete -cf sudo

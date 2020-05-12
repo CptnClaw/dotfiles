@@ -3,8 +3,6 @@
 unset LANG
 source /etc/profile.d/locale.sh
 
-MYFONT="fixed"
-
 SELECTED=$(find $HOME/Videos -type f \
 -name '*.mkv' \
 -o -name '*.mp4' \
@@ -13,7 +11,7 @@ SELECTED=$(find $HOME/Videos -type f \
 -o -name '*.webm' \
 -o -name '*.mov' \
 -o -name '*.avi' \
- | sort | dmenu -fn "$MYFONT" -i -l 30)
+ | sort | dmenu $DMENU_STYLE -i -l 30)
 
 if [ "$SELECTED" ]; then
 	echo "$SELECTED" >> $HOME/Videos/WATCHED
