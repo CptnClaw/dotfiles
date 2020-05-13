@@ -2,6 +2,7 @@
 [colors]
 secondary = #ffffff
 background = #bb212121
+opaquebackapprox = #1f2937
 foreground = #dddddd
 
 [bar/fullbar]
