@@ -73,6 +73,7 @@ bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+Shift+s exec dmenu_small_scripts
+bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+b exec dmenu_bluetooth
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run -fn Ubuntu-10 -nb '#1f2937' -sf '#212121' -sb '#82aaff' -nf '#dddddd' -h 25
