@@ -1,0 +1,4 @@
+#!/bin/bash
+
+head -n -1 $HOME/Videos/WATCHED > $HOME/Videos/WATCHED_BACKUP
+mv $HOME/Videos/WATCHED_BACKUP $HOME/Videos/WATCHED

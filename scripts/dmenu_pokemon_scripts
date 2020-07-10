@@ -1,0 +1,8 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+SELECTED=$(ls $HOME/scripts/pokemon_scripts | dmenu $DMENU_STYLE -i -l 30 -p "Pokemon:")
+
+exec $HOME/scripts/pokemon_scripts/"$SELECTED"

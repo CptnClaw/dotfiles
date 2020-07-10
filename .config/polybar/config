@@ -218,7 +218,7 @@ format-underline = ${colors.secondary}
 
 [module/networkmanager]
 type = custom/text
-click-left = "terminator -e nmtui -T nmtui"
+click-left = "xfce4-terminal -e nmtui -T nmtui"
 interval = 1000
 content = ""
 

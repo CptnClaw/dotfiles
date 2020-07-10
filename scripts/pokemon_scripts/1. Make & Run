@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd $HOME/Dropbox/dev/pokered
+if make; then
+    sameboy pokered.gbc
+else
+    notify-send "Error making pokemon"
+fi
