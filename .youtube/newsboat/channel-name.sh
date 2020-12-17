@@ -1,0 +1,1 @@
+for channel in $(cat urls | awk '{print $1}' | awk -F= '{print $NF}'); do name=$(youtube-dl --max-downloads 1 --get-filename -o '%(uploader)s' "https://www.youtube.com/channel/"$channel); echo "https://www.youtube.com/feeds/videos.xml?"$channel \"$name\"; done > urls_fixed

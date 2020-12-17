@@ -148,7 +148,7 @@ label-visible = %name%
 label-visible-padding = 2
 label-mode = %mode%
 
-Material theme
+;Material theme
 label-mode-background = "#82aaff"
 label-mode-foreground = "#212121"
 label-mode-padding = 2

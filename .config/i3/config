@@ -46,6 +46,7 @@ exec --no-startup-id dropbox
 exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker myi3lock
 exec --no-startup-id telegram-desktop
+exec --no-startup-id xmousepasteblock
 exec --no-startup-id i3-msg 'workspace number $ws5; exec xfce4-terminal --hide-menubar -x newsboat; workspace number $ws1'
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
@@ -64,8 +65,8 @@ bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config /home/eyal/.config/polybar/config
 bindsym $mod+c exec galculator
 bindsym $mod+f exec env GTK_THEME=Arc firefox
+bindsym $mod+Shift+f exec env GTK_THEME=Arc firefox --private-window
 bindsym $mod+e exec pcmanfm
-bindsym $mod+u exec pcmanfm /home/eyal/Dropbox/uni
 bindsym $mod+m exec xfce4-terminal --hide-menubar -x cmus
 bindsym $mod+n exec simplenote
 bindsym Print exec xfce4-clipman & xfce4-screenshooter
@@ -75,11 +76,12 @@ bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+Shift+s exec dmenu_small_scripts
 bindsym $mod+Shift+p exec dmenu_pokemon_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
+bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse --sort year
 bindsym $mod+b exec dmenu_bluetooth
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run -fn Ubuntu-10 -nb '#1f2937' -sf '#212121' -sb '#82aaff' -nf '#dddddd' -h 25
 bindsym $mod+Shift+m exec pavucontrol
-bindsym $mod+Tab exec --no-startup-id myi3lock
+bindsym $mod+Tab exec myi3lock
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym XF86AudioPlay exec "cmus-remote -u"
