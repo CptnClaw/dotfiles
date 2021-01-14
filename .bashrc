@@ -108,6 +108,7 @@ alias more=less
 alias pac="pacman --color=always"
 alias yay="yay --answerdiff All"
 
+alias spelling='aspell -c -t'
 alias configit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
 alias yt='XDG_CONFIG_HOME=/home/eyal/.youtube XDG_DATA_HOME=/home/eyal/.youtube newsboat'
 
