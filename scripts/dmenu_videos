@@ -3,7 +3,7 @@
 unset LANG
 source /etc/profile.d/locale.sh
 
-SELECTED=$(find $HOME/Videos -type f \
+SELECTED=$(find $HOME/Dropbox/youtube -type f \
 -name '*.mkv' \
 -o -name '*.mp4' \
 -o -name '*.wmv' \

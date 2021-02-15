@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ORIG_FILE=$HOME/Videos/youtube/ERRORS
-FILE=$HOME/Videos/youtube/ERRORS_BACKUP
+ORIG_FILE=$HOME/Dropbox/youtube/ERRORS
+FILE=$HOME/Dropbox/youtube/ERRORS_BACKUP
 mv $ORIG_FILE $FILE
 NUM_VIDS=$(wc -l "$FILE" | cut -f 1 -d " ")
 notify-send "redownloading $NUM_VIDS video/s"

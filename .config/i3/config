@@ -5,6 +5,10 @@
 ## configuration
 ##################################
 
+# Font icons from:
+# https://rawgit.com/luizbills/feather-icon-font/master/demo/index.html
+
+
 set $mod Mod4
 new_window pixel 2
 new_float normal
@@ -14,25 +18,15 @@ floating_modifier $mod
 focus_follows_mouse yes
 #for_window [urgent=latest] focusfocus_on_window_activation none
 set $ws1 1: 
-set $ws2 2: 
+set $ws2 2: 
 set $ws3 3: 
-set $ws4 4: 
-set $ws5 5: 
+set $ws4 4: 
+set $ws5 5: 
 set $ws6 6: 
-set $ws7 7: 
-set $ws8 8: 
+set $ws7 7: 
+set $ws8 8: 
 set $ws9 9: 
 set $ws0 10: 
-# set $ws1 1
-# set $ws2 2
-# set $ws3 3
-# set $ws4 4
-# set $ws5 5
-# set $ws6 6
-# set $ws7 7
-# set $ws8 8
-# set $ws9 9
-# set $ws0 10
 
 
 ##################################
@@ -47,7 +41,8 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker myi3lock
 exec --no-startup-id telegram-desktop
 exec --no-startup-id xmousepasteblock
-exec --no-startup-id i3-msg 'workspace number $ws5; exec xfce4-terminal --hide-menubar -x newsboat; workspace number $ws1'
+exec --no-startup-id i3-msg 'workspace number $ws7; exec xfce4-terminal --hide-menubar -x newsboat; workspace number $ws1'
+#exec --no-startup-id i3-msg 'workspace number $ws8; exec xfce4-terminal --hide-menubar -x yt; workspace number $ws1'
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
@@ -173,10 +168,6 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 ##################################
 
 # Open applications on specific workspaces
-#assign [class="Firefox"] $ws1
-#assign [class="lyx"] $ws2
-#assign [class="Feedreader"] $ws5
-assign [class="Lollypop"] $ws0
 assign [class="TelegramDesktop"] $ws9
 
 # Open specific applications in floating mode

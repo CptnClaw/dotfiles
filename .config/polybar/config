@@ -16,6 +16,8 @@ fixed-center 	= false
 
 font-0 = "DejaVu Sans:size=10;2"
 font-1 = "Feather:size=10;2"
+; Font icons from:
+; https://rawgit.com/luizbills/feather-icon-font/master/demo/index.html
 
 override-redirect = false
 ;offset-x = 1%

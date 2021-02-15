@@ -1,0 +1,5 @@
+for i in *.flac
+do 
+ffmpeg -i "$i" -q:a 6 -vn "${i%.*}.ogg" 
+done
+

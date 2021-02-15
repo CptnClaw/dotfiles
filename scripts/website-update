@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -uvrP --delete-after /home/eyal/Dropbox/dev/website/ root@ysfm.co.il:/var/www/homepage/
