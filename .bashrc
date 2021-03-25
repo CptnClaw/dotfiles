@@ -107,6 +107,7 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias pac="pacman --color=always"
 alias yay="yay --answerdiff All"
+alias clip="xclip -selection c"
 
 alias spelling='aspell -c -t'
 alias configit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
