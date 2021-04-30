@@ -12,7 +12,6 @@ then
 	mpv "$VID"
 elif [ "$CMD" == "Download" ] 
 then
-	notify-send "downloading $VID..."
 	my_youtube_dl.sh "$VID"
 fi
 

@@ -1,9 +1,11 @@
 #!/bin/bash
 
 VID=$1
-OUTDIR="$HOME"/Dropbox/youtube/
+OUTDIR="$HOME"/Videos/youtube/
 OUTFORMAT="%(uploader)s - %(title)s (%(duration)ss).%(ext)s"
-if youtube-dl -f "bestvideo[height<=?720]+bestaudio/best" -o "$OUTDIR""$OUTFORMAT" "$VID"
+
+notify-send "downloading $VID..."
+if youtube-dl -f "bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]/mp4" --audio-format aac --merge-output-format mp4 -o "$OUTDIR""$OUTFORMAT" "$VID"
 then
 	notify-send "finished downloading $VID!"
 else
