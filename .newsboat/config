@@ -1,2 +1,7 @@
 auto-reload	yes
 browser 	firefox
+
+urls-source "miniflux"
+miniflux-url "https://feed.ysfm.co.il"
+miniflux-login "cptnclaw"
+miniflux-password "SupremeFollow"
