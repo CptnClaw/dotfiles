@@ -162,4 +162,3 @@ source /etc/profile.d/locale.sh
 
 export VISUAL=nano
 export EDITOR="$VISUAL"
-
