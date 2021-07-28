@@ -54,10 +54,8 @@ exec --no-startup-id xset -b
 ##################################
 
 # applications
-bindsym $mod+Shift+t exec --no-startup-id restart_picom
-bindsym $mod+Shift+x --release exec --no-startup-id xkill
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
-bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config #/home/eyal/.config/polybar/config
+bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config 
 bindsym $mod+c exec galculator
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
@@ -65,12 +63,12 @@ bindsym $mod+Shift+f exec firefox --private-window
 bindsym $mod+e exec pcmanfm
 bindsym $mod+m exec xfce4-terminal --hide-menubar -x cmus
 bindsym $mod+n exec simplenote
-bindsym Print exec xfce4-clipman & xfce4-screenshooter
+bindsym $mod+Shift+t exec dmenu_thoughts
 bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+Shift+s exec dmenu_small_scripts
-bindsym $mod+Shift+p exec dmenu_pokemon_scripts
+#bindsym $mod+Shift+p exec dmenu_pokemon_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
@@ -79,11 +77,19 @@ bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run -fn Ubuntu-10 -nb '#1f2937' -
 bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec myi3lock
+bindsym $mod+BackSpace exec ./scripts/keyboard_shortcuts_cheatsheet.sh
+
+# media
+bindsym Print exec xfce4-clipman & xfce4-screenshooter
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 bindsym XF86AudioPlay exec "cmus-remote -u"
 bindsym XF86AudioNext exec "cmus-remote -n"
 bindsym XF86AudioPrev exec "cmus-remote -r"
+
+# system
+#bindsym $mod+Shift+t exec --no-startup-id restart_picom
+bindsym $mod+Shift+x --release exec --no-startup-id xkill
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+r restart
 
@@ -185,6 +191,7 @@ for_window [class="Arandr"] floating enable
 for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
+for_window [class="Gxmessage"] floating enable
 
 
 ##################################

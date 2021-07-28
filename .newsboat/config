@@ -1,5 +1,8 @@
 auto-reload	yes
 browser 	firefox
+confirm-mark-all-feeds-read no
+
+bind-key o open-in-browser-and-mark-read
 
 urls-source "miniflux"
 miniflux-url "https://feed.ysfm.co.il"
