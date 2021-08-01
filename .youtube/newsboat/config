@@ -3,6 +3,8 @@ browser 	"my_youtube_dl.sh %u >/dev/null 2>/dev/null & "
 macro w set browser "mpv %u &"; open-in-browser-noninteractively ; set browser "my_youtube_dl.sh %u >/dev/null 2>/dev/null & "
 feed-sort-order lastupdated
 confirm-mark-all-feeds-read no
+reload-time 10
+reload-threads 2
 
 bind-key o open-in-browser-and-mark-read
 bind-key w macro-prefix
