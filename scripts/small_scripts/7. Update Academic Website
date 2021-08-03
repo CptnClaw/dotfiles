@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -rtv --delete-after /home/eyal/Dropbox/websites/academic/ seelig@math.huji.ac.il:/home/staff/seelig/public_html
