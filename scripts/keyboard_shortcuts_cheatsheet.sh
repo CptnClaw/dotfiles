@@ -1,8 +1,12 @@
 #!/bin/bash
 
 FILE=".config/i3/config"
-START=$(grep "# applications" -n $FILE | cut -d ":" -f 1)
-END=$(grep "# media" -n $FILE | cut -d ":" -f 1)
-RANGE="$START","$END""p"
-sed -n $RANGE "$FILE" | grep bindsym | grep -v ^# | \
+sed -n '/START_KEYS/,/END_KEYS/p' "$FILE" | \
+	grep bindsym | \
+	grep -v ^# | \
+	sort | \
+	sed 's/bindsym //' | \
+	#column -t -o 'exec' | \
+	sed 's/ exec /:/' | \
+	column -t -s ':'   | \
 	gxmessage -buttons "" -file - -font "mono 16" -borderless

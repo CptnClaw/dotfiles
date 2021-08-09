@@ -1,2 +1,2 @@
 #!/bin/bash
-rsync -rtv --delete-after /home/eyal/Dropbox/websites/personal/ root@ysfm.co.il:/var/www/homepage
+rsync -rtvzP --delete-after /home/eyal/Dropbox/websites/personal/ root@ysfm.co.il:/var/www/homepage

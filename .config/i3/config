@@ -53,7 +53,7 @@ exec --no-startup-id xset -b
 ## Keyboard shortcuts
 ##################################
 
-# applications
+# START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config 
 bindsym $mod+c exec galculator
@@ -73,11 +73,12 @@ bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
 bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse --sort year
-bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run -fn Ubuntu-10 -nb '#1f2937' -sf '#212121' -sb '#82aaff' -nf '#dddddd' -h 25
+bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
 bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec myi3lock
 bindsym $mod+BackSpace exec ./scripts/keyboard_shortcuts_cheatsheet.sh
+# END_KEYS
 
 # media
 bindsym Print exec xfce4-clipman & xfce4-screenshooter
