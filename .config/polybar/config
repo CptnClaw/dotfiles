@@ -221,6 +221,7 @@ format-underline = ${colors.secondary}
 [module/networkmanager]
 type = custom/text
 click-left = "xfce4-terminal -e nmtui -T nmtui"
+click-right = "/home/eyal/scripts/small_scripts/5.\ Restart\ Wifi"
 interval = 1000
 content = ""
 
