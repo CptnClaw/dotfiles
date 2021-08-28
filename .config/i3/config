@@ -55,7 +55,7 @@ exec --no-startup-id xset -b
 
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
-bindsym $mod+Shift+c exec subl /home/eyal/.config/i3/config 
+bindsym $mod+Shift+c exec mousepad /home/eyal/.config/i3/config 
 bindsym $mod+c exec galculator
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
@@ -63,6 +63,7 @@ bindsym $mod+Shift+f exec firefox --private-window
 bindsym $mod+e exec pcmanfm
 bindsym $mod+m exec xfce4-terminal --hide-menubar -x cmus
 bindsym $mod+n exec simplenote
+bindsym $mod+t exec mousepad
 bindsym $mod+Shift+t exec dmenu_thoughts
 bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
@@ -193,6 +194,8 @@ for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
 for_window [class="Gxmessage"] floating enable
+for_window [class="Godot_*"] floating enable
+
 
 
 ##################################
