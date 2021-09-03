@@ -14,7 +14,7 @@ line-size		= 0
 bottom			= false
 fixed-center 	= false
 
-font-0 = "DejaVu Sans:size=10;2"
+font-0 = "DejaVu Sans Mono:size=10;2"
 font-1 = "Feather:size=10;2"
 ; Font icons from:
 ; https://rawgit.com/luizbills/feather-icon-font/master/demo/index.html
@@ -27,9 +27,9 @@ throttle-output          = 5
 throttle-output-for      = 10
 throttle-input-for       = 30
 padding-left             = 1
-padding-right            = 2
-module-margin-left       = 2
-module-margin-right      = 2
+padding-right            = 1
+module-margin-left       = 1
+module-margin-right      = 1
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -43,22 +43,22 @@ separator =
 
 [module/memory]
 type = internal/memory
-internal = 1
+interval = 2
 format = <label>
-label =   %percentage_used:2%%
+label =  %percentage_used:02%%
 format-underline = ${colors.secondary}
 
 [module/cpu]
 type = internal/cpu
-internal = 0.5
-format =   <label>%
-label = %percentage%
+interval = 2
+format =  <label>%
+label = %percentage:02%
 format-underline = ${colors.secondary}
 
 [module/date]
 type = internal/date
 interval = 5
-date = " %Y-%m-%d"
+date = "%Y-%m-%d"
 time = %H:%M
 label =  %date%   %time%
 ;label =  %time%
@@ -82,14 +82,6 @@ label-full =
 time-format = %H:%M
 format-underline = ${colors.secondary}
 
-[module/wlan]
-type = internal/network
-interface = wlp2s0
-interval = 5
-label-connected =  %essid% 
-label-disconnected = 
-
-
 [module/pavolume]
 type = custom/script
 tail = true
@@ -101,6 +93,113 @@ scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
 format-underline = ${colors.secondary}
 
+[module/i3]
+type = internal/i3
+pin-workspace = false
+index-sort = true
+
+enable-click = true
+enable-scroll = true
+wrapping-scroll = false
+reverse-scroll = false
+format = <label-state> <label-mode>
+label-focused = %name%
+label-focused-padding = 1
+label-focused-background = "#82aaff"
+label-focused-foreground = "#212121"
+
+label-unfocused = %name%
+label-unfocused-padding = 1
+label-visible = %name%
+label-visible-padding = 1
+label-mode = %mode%
+
+;Material theme
+label-mode-background = "#82aaff"
+label-mode-foreground = "#212121"
+label-mode-padding = 1
+label-urgent = %name%
+label-urgent-padding = 1
+
+
+[module/title]
+type = internal/xwindow
+format = <label>
+label = %title%
+label-maxlen = 60
+
+[module/separator]
+type = custom/text
+content =  
+content-padding = 1
+
+[module/xkeyboard2]
+;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
+type = internal/xkeyboard
+blacklist-0 = num lock
+;blacklist-1 = caps lock
+format-underline = ${colors.secondary}
+label-indicator-on-capslock = "+"
+
+
+[module/networkspeedup]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = wlp2s0
+;interface = enp14s0
+;interface = enp0s31f6
+;interface = enp3s0
+label-connected = "%upspeed:08%"
+format-connected-prefix = " "
+label-disconnected = "--- KB/s"
+format-disconnected-prefix = " "
+format-underline = ${colors.secondary}
+accumulate-stats = true
+
+
+
+[module/networkspeeddown]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = wlp2s0
+;interface = enp14s0
+;interface = enp0s31f6
+;interface = enp3s0
+label-connected = "%downspeed:08%"
+format-connected-prefix = " "
+
+label-disconnected = "--- KB/s"
+format-disconnected-prefix = " "
+
+format-underline = ${colors.secondary}
+accumulate-stats = true
+
+
+[module/networkmanager]
+type = custom/text
+click-left = "xfce4-terminal -e nmtui -T nmtui"
+click-right = "/home/eyal/scripts/small_scripts/5.\ Restart\ Wifi"
+interval = 1000
+content = ""
+
+
+[module/zipcode]
+type = custom/text
+click-left = "echo 9630829 | xclip -selection clipboard"
+interval = 1000
+content = ""
+
+
+
+
+; NOT USED
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 5
+label-connected =  %essid% 
+label-disconnected = 
 
 [module/eth]
 type = internal/network
@@ -127,107 +226,3 @@ icon-stop = 
 icon-prev = 
 icon-next = 
 format-padding = 2
-
-[module/i3]
-type = internal/i3
-pin-workspace = false
-index-sort = true
-
-enable-click = true
-enable-scroll = true
-wrapping-scroll = false
-reverse-scroll = false
-format = <label-state> <label-mode>
-label-focused = %name%
-label-focused-padding = 3
-label-focused-background = "#82aaff"
-label-focused-foreground = "#212121"
-
-
-label-unfocused = %name%
-label-unfocused-padding = 3
-label-visible = %name%
-label-visible-padding = 2
-label-mode = %mode%
-
-;Material theme
-label-mode-background = "#82aaff"
-label-mode-foreground = "#212121"
-label-mode-padding = 2
-label-urgent = %name%
-label-urgent-padding = 3
-
-ws-icon-0 = 1A;A
-ws-icon-1 = 2B;B
-ws-icon-2 = 3C;C
-ws-icon-3 = 4;D
-ws-icon-4 = 5;E
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = 
-
-
-[module/title]
-type = internal/xwindow
-format = <label>
-label = %title%
-label-maxlen = 60
-
-[module/separator]
-type = custom/text
-content =  
-content-padding = 1
-
-[module/xkeyboard2]
-;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
-type = internal/xkeyboard
-blacklist-0 = num lock
-blacklist-1 = caps lock
-format-underline = ${colors.secondary}
-
-
-
-[module/networkspeedup]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = wlp2s0
-;interface = enp14s0
-;interface = enp0s31f6
-;interface = enp3s0
-label-connected = "%upspeed:7%"
-format-connected = <label-connected>
-format-connected-prefix = ""
-format-underline = ${colors.secondary}
-
-
-
-[module/networkspeeddown]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = wlp2s0
-;interface = enp14s0
-;interface = enp0s31f6
-;interface = enp3s0
-label-connected = "%downspeed:7%"
-format-connected = <label-connected>
-format-connected-prefix = ""
-format-underline = ${colors.secondary}
-
-
-
-[module/networkmanager]
-type = custom/text
-click-left = "xfce4-terminal -e nmtui -T nmtui"
-click-right = "/home/eyal/scripts/small_scripts/5.\ Restart\ Wifi"
-interval = 1000
-content = ""
-
-
-[module/zipcode]
-type = custom/text
-click-left = "echo 9630829 | xclip -selection clipboard"
-interval = 1000
-content = ""
