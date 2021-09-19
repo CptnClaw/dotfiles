@@ -35,8 +35,8 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 modules-left = i3  
 modules-center = title
-modules-right = xkeyboard2 networkspeedup networkspeeddown memory cpu pavolume networkmanager zipcode date battery
-separator = 
+modules-right = splitlayout xkeyboard2 networkspeedup networkspeeddown memory cpu pavolume networkmanager zipcode date battery
+separator =  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -181,6 +181,12 @@ click-left = "xfce4-terminal -e nmtui -T nmtui"
 click-right = "/home/eyal/scripts/small_scripts/5.\ Restart\ Wifi"
 interval = 1000
 content = ""
+
+
+[module/splitlayout]
+type = custom/script
+exec = /home/eyal/scripts/split_layout.sh
+interval = 5
 
 
 [module/zipcode]

@@ -13,7 +13,7 @@ PS1='\[\033[01;36m\]\W\
 
 
 # Environment Variables
-export VISUAL=nano
+export VISUAL=vim
 export EDITOR="$VISUAL"
 
 
