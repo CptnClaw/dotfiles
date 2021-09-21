@@ -40,7 +40,10 @@ set matchpairs=(:),\[:\],{:},<:>
 set autoindent
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 
+" Ask if save before exiting
+set confirm
 
 
 " Copy and paste from external clipboard
@@ -72,6 +75,25 @@ inoremap <c-w> <c-g>u<c-w>
 
 
 " Colors
-syntax enable
-highlight CursorLine cterm=NONE ctermbg=DarkGrey
+syntax on
+highlight CursorLine cterm=NONE ctermbg=Black
 highlight Visual ctermbg=Blue
+
+
+" Variables
+let $RTP=split(&runtimepath, ',')[0]
+let $RC="$HOME/.vimrc"
+
+
+" netrw config
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+let g:netrw_list_hide = '^\..*'
+let g:netrw_hide = 1
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END

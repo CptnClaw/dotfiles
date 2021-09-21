@@ -10,9 +10,7 @@
 
 
 set $mod Mod4
-new_window pixel 2
 for_window [class=.*] border pixel 2
-new_float normal
 focus_wrapping no
 font xft:URWGothic-Book 11
 floating_modifier $mod
