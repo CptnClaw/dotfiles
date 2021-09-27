@@ -8,3 +8,14 @@ urls-source "miniflux"
 miniflux-url "https://feed.ysfm.co.il"
 miniflux-login "cptnclaw"
 miniflux-password "SupremeFollow"
+
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+bind-key G end
+bind-key g home
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+

@@ -1,0 +1,3 @@
+colorscheme gruvbox
+bind -f common t run kid3 
+

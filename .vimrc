@@ -7,12 +7,17 @@ set encoding=utf-8
 " Detect file types and specific indents/settings
 filetype plugin indent on
 
+" Find files in project
+set path+=**
+set wildmenu
+
 " No text wrapping
 set nowrap
 
 " Common search options
 set hlsearch
 set incsearch
+nnoremap <leader>h :set hlsearch!<CR>
 
 " Ignore case sensitivity, unless there is a capital char
 set ignorecase
@@ -24,9 +29,15 @@ set backspace=indent,eol,start
 " Highlight the current line of the cursor
 " only in active buffer
 augroup cursorlineonoff
-autocmd! 
-autocmd BufEnter,WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+	autocmd! 
+	autocmd BufEnter,WinEnter * setlocal cursorline
+	autocmd WinLeave * setlocal nocursorline
+augroup END
+
+" Activate spell check in LaTeX
+augroup texspell
+	autocmd!
+	autocmd FileType tex setlocal spell spelllang=en_us
 augroup END
 
 " Relative line numbers
@@ -44,6 +55,9 @@ set shiftwidth=4
 
 " Ask if save before exiting
 set confirm
+
+" Start scrolling before getting the screen edge
+set scrolloff=4
 
 
 " Copy and paste from external clipboard
@@ -74,10 +88,18 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
 
+" Plugins
+call plug#begin('~/.vim/plugged')
+Plug 'takac/vim-hardtime' 
+Plug 'gruvbox-community/gruvbox'
+call plug#end()
+let g:hardtime_default_on = 1
+
 " Colors
 syntax on
-highlight CursorLine cterm=NONE ctermbg=Black
-highlight Visual ctermbg=Blue
+colorscheme gruvbox
+"highlight CursorLine cterm=NONE ctermbg=Black
+"highlight Visual ctermbg=Blue
 
 
 " Variables
