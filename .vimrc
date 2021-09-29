@@ -26,6 +26,9 @@ set smartcase
 " Backspace works on indents and across lines
 set backspace=indent,eol,start
 
+" Always show statusline (for lightline plugin)
+set laststatus=2
+
 " Highlight the current line of the cursor
 " only in active buffer
 augroup cursorlineonoff
@@ -90,6 +93,7 @@ inoremap <c-w> <c-g>u<c-w>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
