@@ -52,6 +52,7 @@ set matchpairs=(:),\[:\],{:},<:>
 
 " Indentation
 set autoindent
+set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -90,9 +91,12 @@ nnoremap k gk
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+nnoremap <C-p> :Files<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
