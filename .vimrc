@@ -60,6 +60,9 @@ set shiftwidth=4
 " Ask if save before exiting
 set confirm
 
+" Allow jumping between buffers without saving
+set hidden
+
 " Start scrolling before getting the screen edge
 set scrolloff=4
 

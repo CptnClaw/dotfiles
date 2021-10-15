@@ -35,7 +35,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 modules-left = i3  
 modules-center = title
-modules-right = splitlayout xkeyboard2 networkspeedup networkspeeddown memory cpu pavolume networkmanager zipcode date battery
+modules-right = xkeyboard2 networkspeedup networkspeeddown memory cpu pavolume networkmanager zipcode date battery
 separator =  
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
