@@ -66,6 +66,7 @@ bindsym $mod+Shift+t exec dmenu_thoughts
 bindsym $mod+Shift+y exec dmenu_youtube
 bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
+bindsym $mod+v exec dmenu_videos nohistory
 bindsym $mod+Shift+s exec dmenu_small_scripts
 #bindsym $mod+Shift+p exec dmenu_pokemon_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks

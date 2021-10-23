@@ -64,7 +64,7 @@ set confirm
 set hidden
 
 " Start scrolling before getting the screen edge
-set scrolloff=4
+set scrolloff=2
 
 
 " Copy and paste from external clipboard
@@ -75,14 +75,17 @@ nnoremap <leader>p "+p
 nnoremap <leader><leader> <c-^>
 
 " Switch ; and : for easier access
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 
 " Disable arrow keys in normal mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+
+" Mouse scrolling is nice
+set mouse=a
 
 " Allow proper movement when wrap is on
 nnoremap j gj
@@ -94,6 +97,13 @@ nnoremap k gk
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+" Tab navigation
+noremap <C-h> :tabp<CR>  " Go left
+noremap <C-l> :tabn<CR>  " Go right
+noremap <C-j> :tabc<CR>  " Close tab
+noremap <C-k> :tabe<CR>  " New tab
+
+" Fuzzy find files
 nnoremap <C-p> :Files<CR>
 
 " Plugins
