@@ -12,6 +12,11 @@ PS1='\[\033[01;36m\]\W\
 \[\033[00m\] '
 
 
+# Key bindings
+bind '"\C-f":"cd_with_fzf\n"'
+bind '"\C-o":"open_with_fzf\n"'
+
+
 # Environment Variables
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -66,6 +71,34 @@ export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
 export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+
+
+# Fuzzy Finder functions
+cd_with_fzf() 
+{
+	cd $HOME && \
+	cd $(fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden) && \
+	echo "$PWD"
+}
+
+cd_with_fzfh() 
+{
+	cd $HOME && \
+	cd $(fd -t d -H | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden) && \
+	echo "$PWD"
+}
+
+open_with_fzf()
+{
+	fd -t f -H -I | \
+	fzf |
+	xargs -ro -d "\n" xdg-open 2<&-
+}
+
+pacs() 
+{
+    sudo pacman -S $(pacman -Ssq | fzf -m --preview="pacman -Si {}" --preview-window=:hidden --bind=space:toggle-preview)
+}
 
 
 # Helper functions
