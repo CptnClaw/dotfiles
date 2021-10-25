@@ -32,6 +32,7 @@ set $ws0 10:
 ##################################
 
 exec --no-startup-id pa-applet
+exec --no-startup-id mons -e left
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -bf
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id dropbox
@@ -46,6 +47,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
+exec --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,il
 
 ##################################
 ## Keyboard shortcuts
@@ -72,6 +74,7 @@ bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
 bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse --sort year
+bindsym $mod+Shift+z exec papis -s picktool rofi open
 bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
 bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Shift+m exec pavucontrol
