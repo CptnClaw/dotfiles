@@ -102,9 +102,11 @@ noremap <C-h> :tabp<CR>  " Go left
 noremap <C-l> :tabn<CR>  " Go right
 noremap <C-j> :tabc<CR>  " Close tab
 noremap <C-k> :tabe<CR>  " New tab
+nnoremap <leader>t :tab sball<CR>
 
 " Fuzzy find files
-nnoremap <C-p> :Files<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')

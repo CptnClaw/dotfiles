@@ -78,6 +78,7 @@ bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec myi3lock
 bindsym $mod+BackSpace exec ./scripts/keyboard_shortcuts_cheatsheet.sh
+bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
 # END_KEYS
 
 # media
@@ -181,6 +182,7 @@ assign [class="TelegramDesktop"] $ws9
 
 # Open specific applications in floating mode
 for_window [title="File Transfer*"] floating enable
+for_window [title="fzf"] floating enable
 for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border

@@ -88,6 +88,12 @@ cd_with_fzfh()
 	echo "$PWD"
 }
 
+open_with_fzf_once()
+{
+	FZF_CHOICE=$(fd -t f -H -I | fzf)
+	nohup xdg-open "$FZF_CHOICE" & exit
+}
+
 open_with_fzf()
 {
 	fd -t f -H -I | \
