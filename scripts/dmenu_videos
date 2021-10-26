@@ -3,18 +3,34 @@
 unset LANG
 source /etc/profile.d/locale.sh
 
-SELECTED=$(find $HOME/Videos/youtube -type f \
--name '*.mkv' \
--o -name '*.mp4' \
--o -name '*.wmv' \
--o -name '*.flv' \
--o -name '*.webm' \
--o -name '*.mov' \
--o -name '*.avi' \
- | sort | dmenu $DMENU_STYLE -i -l 30)
+cd $HOME/Videos
 
-if [ "$SELECTED" ]; then
-	echo "$SELECTED" >> $HOME/Videos/WATCHED
-	echo "$SELECTED" >> $HOME/Videos/HISTORY
-	mpv "$SELECTED"
+CATEGORY=$(fd -t d \
+	| dmenu $DMENU_STYLE -p "$1" -i -l 30)
+
+if [ -d "$CATEGORY" ]; then
+	echo $CATEGORY
+	cd "$CATEGORY"
+	SELECTED=$(fd -t f \
+	-e 'mkv' \
+	-e 'mp4' \
+	-e 'wmv' \
+	-e 'flv' \
+	-e '.webm' \
+	-e 'mov' \
+	-e '.avi' \
+	 | sort | dmenu $DMENU_STYLE -p "$1" -i -l 30)
+
+	if [ -f "$SELECTED" ]; then
+		echo $SELECTED
+		echo $1
+		if [ ! $1 ] || [ $1 != "nohistory" ]; then
+			echo "History mode"
+			echo $HOME/Videos/"$CATEGORY"/"$SELECTED" >> $HOME/Videos/WATCHED
+			echo $HOME/Videos/"$CATEGORY"/"$SELECTED" >> $HOME/Videos/HISTORY
+		fi
+		mpv "$SELECTED"
+	fi
 fi
+
+

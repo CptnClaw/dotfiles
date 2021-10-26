@@ -1,0 +1,1 @@
+-o "%(uploader)s - %(title)s (%(duration>%H)s:%(duration>%M)s:%(duration>%S)s).%(ext)s"

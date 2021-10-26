@@ -52,6 +52,7 @@ set matchpairs=(:),\[:\],{:},<:>
 
 " Indentation
 set autoindent
+set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -59,8 +60,11 @@ set shiftwidth=4
 " Ask if save before exiting
 set confirm
 
+" Allow jumping between buffers without saving
+set hidden
+
 " Start scrolling before getting the screen edge
-set scrolloff=4
+set scrolloff=2
 
 
 " Copy and paste from external clipboard
@@ -71,14 +75,17 @@ nnoremap <leader>p "+p
 nnoremap <leader><leader> <c-^>
 
 " Switch ; and : for easier access
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 
 " Disable arrow keys in normal mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+
+" Mouse scrolling is nice
+set mouse=a
 
 " Allow proper movement when wrap is on
 nnoremap j gj
@@ -90,9 +97,21 @@ nnoremap k gk
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+" Tab navigation
+noremap <C-h> :tabp<CR>  " Go left
+noremap <C-l> :tabn<CR>  " Go right
+noremap <C-j> :tabc<CR>  " Close tab
+noremap <C-k> :tabe<CR>  " New tab
+nnoremap <leader>t :tab sball<CR>
+
+" Fuzzy find files
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
