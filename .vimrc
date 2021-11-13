@@ -85,7 +85,9 @@ nnoremap <leader><leader> <c-^>
 "nnoremap <right> <nop>
 
 " Mouse scrolling is nice
-set mouse=a
+if has('mouse')
+	set mouse=a
+endif
 
 " Allow proper movement when wrap is on
 nnoremap j gj
@@ -97,6 +99,9 @@ nnoremap k gk
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+" Substitute command
+nnoremap <leader>s :%s///gc<Left><Left><Left><Left>
+
 " Tab navigation
 noremap <C-h> :tabp<CR>  " Go left
 noremap <C-l> :tabn<CR>  " Go right
@@ -105,11 +110,15 @@ noremap <C-k> :tabe<CR>  " New tab
 nnoremap <leader>t :tab sball<CR>
 
 " Fuzzy find files
-nnoremap <leader>f :Files<CR>
+nnoremap <leader>o :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'lervag/vimtex'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -117,6 +126,14 @@ Plug 'takac/vim-hardtime'
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
 let g:hardtime_default_on = 1
+
+" NERDTree
+function! ToggleNERDTree()
+	NERDTreeToggle
+	" Set NERDTree instances to be mirrored
+	silent NERDTreeMirror
+endfunction
+nnoremap <leader>n :call ToggleNERDTree()<CR>
 
 " Colors
 syntax on
