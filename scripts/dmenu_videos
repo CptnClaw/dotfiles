@@ -5,13 +5,13 @@ source /etc/profile.d/locale.sh
 
 cd $HOME/Videos
 
-CATEGORY=$(fd -t d \
+CATEGORY=$(fd --strip-cwd-prefix -t d \
 	| dmenu $DMENU_STYLE -p "$1" -i -l 30)
 
 if [ -d "$CATEGORY" ]; then
 	echo $CATEGORY
 	cd "$CATEGORY"
-	SELECTED=$(fd -t f \
+	SELECTED=$(fd --strip-cwd-prefix -t f \
 	-e 'mkv' \
 	-e 'mp4' \
 	-e 'wmv' \

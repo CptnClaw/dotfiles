@@ -195,7 +195,7 @@ for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
 for_window [class="Gxmessage"] floating enable
-for_window [class="Godot_*"] floating enable
+for_window [instance="Godot_Engine"] floating enable
 
 
 
