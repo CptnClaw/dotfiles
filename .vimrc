@@ -28,6 +28,8 @@ set backspace=indent,eol,start
 
 " Always show statusline (for lightline plugin)
 set laststatus=2
+set noshowmode
+set showcmd
 
 " Highlight the current line of the cursor
 " only in active buffer
@@ -65,6 +67,8 @@ set hidden
 
 " Start scrolling before getting the screen edge
 set scrolloff=2
+set sidescrolloff=4
+set sidescroll=1
 
 
 " Copy and paste from external clipboard
@@ -73,16 +77,6 @@ nnoremap <leader>p "+p
 
 " Press leader twice to switch between your last two buffers
 nnoremap <leader><leader> <c-^>
-
-" Switch ; and : for easier access
-"nnoremap ; :
-"nnoremap : ;
-
-" Disable arrow keys in normal mode
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
 
 " Mouse scrolling is nice
 if has('mouse')
@@ -93,11 +87,9 @@ endif
 nnoremap j gj
 nnoremap k gk
 
-" Start a new change before deleting with Ctrl+u, so a normal mode "u" can still
-" recover the deleted word or line.  Normally Ctrl+u while in insert mode
-" would delete the text without undo history and it would be lost forever.
-inoremap <c-u> <c-g>u<c-u>
-inoremap <c-w> <c-g>u<c-w>
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
 
 " Substitute command
 nnoremap <leader>s :%s///gc<Left><Left><Left><Left>
@@ -115,6 +107,7 @@ nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lervag/vimtex'
@@ -126,6 +119,9 @@ Plug 'takac/vim-hardtime'
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
 let g:hardtime_default_on = 1
+
+" coc config
+source /home/eyal/.vim/coc-config.vim
 
 " NERDTree
 function! ToggleNERDTree()
