@@ -107,7 +107,9 @@ nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'lervag/vimtex'
@@ -118,10 +120,17 @@ Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 " coc config
 source /home/eyal/.vim/coc-config.vim
+
+" Tex-Conceal
+let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
+let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
+let g:tex_conceal_frac=1
+let g:tex_conceal="abdgm"
+set conceallevel=2
 
 " NERDTree
 function! ToggleNERDTree()
@@ -141,6 +150,7 @@ colorscheme gruvbox
 " Variables
 let $RTP=split(&runtimepath, ',')[0]
 let $RC="$HOME/.vimrc"
+let $COC="$HOME/.vim/coc-config.vim"
 
 
 " netrw config

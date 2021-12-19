@@ -1,0 +1,13 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+DIR="/home/eyal/Dropbox/uni/research/PhD/thoughts"
+SOURCE="/home/eyal/Dropbox/uni/research/PhD/template.tex"
+DATE=$(date +"%Y-%m-%d")
+TITLE=$(echo "" | dmenu $DMENU_STYLE -p "Choose title for new file")
+NEWFILE="$DATE"_"$TITLE".tex
+if [[ ${#TITLE} -gt 0 ]]; then
+	cp "$SOURCE" "$DIR"/"$NEWFILE"
+fi
