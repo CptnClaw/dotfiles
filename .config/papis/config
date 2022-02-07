@@ -1,0 +1,14 @@
+[papers]
+dir = ~/Dropbox/papis/papers
+
+[books]
+dir = ~/Dropbox/papis/books
+
+[materials]
+dir = ~/Dropbox/papis/materials
+
+[settings]
+default-library = papers
+sort-field = year
+header-format = <ansired>{doc.html_escape[title]}</ansired>
+  <ansigreen> {doc.html_escape[author]} </ansigreen><ansiblue>({doc.html_escape[year]})</ansiblue>

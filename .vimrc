@@ -119,6 +119,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
+Plug 'papis/papis-vim'
 call plug#end()
 let g:hardtime_default_on = 0
 
