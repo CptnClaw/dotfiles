@@ -72,7 +72,7 @@ bindsym $mod+Shift+s exec dmenu_small_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
-bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse --sort year
+bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse 
 bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
 bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Shift+m exec pavucontrol
