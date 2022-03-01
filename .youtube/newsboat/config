@@ -12,7 +12,7 @@ bind-key w macro-prefix
 urls-source "miniflux"
 miniflux-url "https://feed.ysfm.co.il"
 miniflux-login "youtube"
-miniflux-password "SupremeFollow"
+miniflux-passwordfile "~/.youtube/newsboat/miniflux-pw"
 
 bind-key j down
 bind-key k up
