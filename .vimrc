@@ -144,6 +144,7 @@ nnoremap <leader>n :call ToggleNERDTree()<CR>
 " Colors
 syntax on
 colorscheme gruvbox
+set background=dark
 "highlight CursorLine cterm=NONE ctermbg=Black
 "highlight Visual ctermbg=Blue
 
