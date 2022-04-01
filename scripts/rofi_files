@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $1 = "hidden" ]; then
+	CHOICE=$(fd -t f -H --strip-cwd-prefix | rofi -i -dmenu -p "fd+hidden:")	
+else
+	CHOICE=$(fd -t f --strip-cwd-prefix | rofi -i -dmenu -p "fd:")	
+fi
+nohup xdg-open "$CHOICE"

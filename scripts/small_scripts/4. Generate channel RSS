@@ -1,8 +1,0 @@
-#!/bin/bash
-
-
-CHANNEL=$(xclip -out)
-URL="https://www.youtube.com/feeds/videos.xml?channel_id=$CHANNEL"
-echo $URL | xclip -selection c
-
-notify-send "To clipboard: $URL"

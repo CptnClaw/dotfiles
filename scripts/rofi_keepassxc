@@ -1,5 +1,6 @@
 #!/bin/bash
 
+~/Dropbox/dev/rofi-keepassxc/rofi-keepassxc ~
 unset LANG
 source /etc/profile.d/locale.sh
 

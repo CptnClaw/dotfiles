@@ -5,6 +5,7 @@ source /etc/profile.d/locale.sh
 
 BOOKMARKS=$HOME/.config/gtk-3.0/bookmarks
 
-SELECTED=$(cat $BOOKMARKS | awk '{print $1}' | dmenu $DMENU_STYLE -i -l 30)
+# SELECTED=$(cat $BOOKMARKS | awk '{print $1}' | dmenu $DMENU_STYLE -i -l 30)
+SELECTED=$(cat $BOOKMARKS | awk '{print $1}' | rofi -dmenu -i -p "")
 
 [ ! -z "$SELECTED" ] && exec pcmanfm --new-win "$SELECTED"

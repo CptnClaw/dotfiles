@@ -54,12 +54,12 @@ exec_always --no-startup-id setxkbmap -option caps:swapescape
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x vim /home/eyal/.config/i3/config 
-bindsym $mod+c exec galculator
+bindsym $mod+c exec rofi -show calc -no-persist-history -no-show-match -no-sort
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
 bindsym $mod+Shift+f exec firefox --private-window
 bindsym $mod+e exec pcmanfm
-bindsym $mod+m exec xfce4-terminal --hide-menubar -x cmus
+bindsym $mod+Shift+m exec xfce4-terminal --hide-menubar -x cmus
 bindsym $mod+t exec mousepad
 bindsym $mod+Shift+t exec dmenu_thoughts
 bindsym $mod+Shift+y exec dmenu_youtube
@@ -70,14 +70,19 @@ bindsym $mod+Shift+s exec dmenu_small_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
-bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse 
-bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
+bindsym $mod+Shift+a exec papis --set picktool rofi open --reverse 
+# bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
+bindsym $mod+d exec rofi -show drun -show-icons 
+bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+y exec gtk-pipe-viewer
 bindsym $mod+Tab exec myi3lock
 bindsym $mod+BackSpace exec ./scripts/keyboard_shortcuts_cheatsheet.sh
-bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
+bindsym $mod+o exec rofi_files
+bindsym $mod+Shift+o exec rofi_files hidden
+# bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
+bindsym $mod+p exec ./Dropbox/dev/rofi-keepassxc/rofi-keepassxc -d .vault
 bindsym $mod+n [class="Simplenote"] scratchpad show
-bindsym $mod+Shift+m [class="Pavucontrol"] scratchpad show
+bindsym $mod+m [class="Pavucontrol"] scratchpad show
 # END_KEYS
 
 # media
