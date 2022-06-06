@@ -116,7 +116,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 " Colors
 syntax on
