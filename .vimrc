@@ -28,6 +28,8 @@ set backspace=indent,eol,start
 
 " Always show statusline (for lightline plugin)
 set laststatus=2
+set noshowmode
+set showcmd
 
 " Highlight the current line of the cursor
 " only in active buffer
@@ -65,6 +67,8 @@ set hidden
 
 " Start scrolling before getting the screen edge
 set scrolloff=2
+set sidescrolloff=4
+set sidescroll=1
 
 
 " Copy and paste from external clipboard
@@ -74,18 +78,10 @@ nnoremap <leader>p "+p
 " Press leader twice to switch between your last two buffers
 nnoremap <leader><leader> <c-^>
 
-" Switch ; and : for easier access
-"nnoremap ; :
-"nnoremap : ;
-
-" Disable arrow keys in normal mode
-"nnoremap <up> <nop>
-"nnoremap <down> <nop>
-"nnoremap <left> <nop>
-"nnoremap <right> <nop>
-
 " Mouse scrolling is nice
-set mouse=a
+if has('mouse')
+	set mouse=a
+endif
 
 " Allow proper movement when wrap is on
 nnoremap j gj
@@ -97,6 +93,13 @@ nnoremap k gk
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
+" Reselect visual selection after indenting
+vnoremap < <gv
+vnoremap > >gv
+
+" Substitute command
+nnoremap <leader>s :%s///gc<Left><Left><Left><Left>
+
 " Tab navigation
 noremap <C-h> :tabp<CR>  " Go left
 noremap <C-l> :tabn<CR>  " Go right
@@ -105,22 +108,49 @@ noremap <C-k> :tabe<CR>  " New tab
 nnoremap <leader>t :tab sball<CR>
 
 " Fuzzy find files
-nnoremap <leader>f :Files<CR>
+nnoremap <leader>o :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'lervag/vimtex'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
+Plug 'papis/papis-vim'
 call plug#end()
 let g:hardtime_default_on = 0
+
+" coc config
+source /home/eyal/.vim/coc-config.vim
+
+" Tex-Conceal
+let g:tex_superscripts= "[0-9a-zA-W.,:;+-<>/()=]"
+let g:tex_subscripts= "[0-9aehijklmnoprstuvx,+-/().]"
+let g:tex_conceal_frac=1
+let g:tex_conceal="abdgm"
+set conceallevel=2
+
+" NERDTree
+function! ToggleNERDTree()
+	NERDTreeToggle
+	" Set NERDTree instances to be mirrored
+	silent NERDTreeMirror
+endfunction
+nnoremap <leader>n :call ToggleNERDTree()<CR>
 
 " Colors
 syntax on
 colorscheme gruvbox
+set background=dark
 "highlight CursorLine cterm=NONE ctermbg=Black
 "highlight Visual ctermbg=Blue
 
@@ -128,6 +158,7 @@ colorscheme gruvbox
 " Variables
 let $RTP=split(&runtimepath, ',')[0]
 let $RC="$HOME/.vimrc"
+let $COC="$HOME/.vim/coc-config.vim"
 
 
 " netrw config

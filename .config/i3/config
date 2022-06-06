@@ -32,8 +32,7 @@ set $ws0 10:
 ##################################
 
 exec --no-startup-id pa-applet
-exec_always --no-startup-id mons -e left
-exec_always --no-startup-id nitrogen --restore; sleep 1; picom -bf
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id dropbox
 #exec --no-startup-id start_conky_maia
@@ -46,8 +45,10 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
-exec_always --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,il
 exec_always --no-startup-id setxkbmap -option caps:swapescape
+
+exec_always --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,il
+exec_always --no-startup-id mons -e left
 
 ##################################
 ## Keyboard shortcuts
@@ -56,13 +57,12 @@ exec_always --no-startup-id setxkbmap -option caps:swapescape
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x vim /home/eyal/.config/i3/config 
-bindsym $mod+c exec galculator
+bindsym $mod+c exec rofi -show calc -no-persist-history -no-show-match -no-sort
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
 bindsym $mod+Shift+f exec firefox --private-window
 bindsym $mod+e exec pcmanfm
-bindsym $mod+m exec xfce4-terminal --hide-menubar -x cmus
-bindsym $mod+n exec simplenote
+bindsym $mod+Shift+m exec xfce4-terminal --hide-menubar -x cmus
 bindsym $mod+t exec mousepad
 bindsym $mod+Shift+t exec dmenu_thoughts
 bindsym $mod+Shift+y exec dmenu_youtube
@@ -70,18 +70,22 @@ bindsym $mod+Shift+g exec dmenu_games
 bindsym $mod+Shift+v exec dmenu_videos
 bindsym $mod+v exec dmenu_videos nohistory
 bindsym $mod+Shift+s exec dmenu_small_scripts
-#bindsym $mod+Shift+p exec dmenu_pokemon_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
-bindsym $mod+Shift+a exec papis --set picktool dmenu open --reverse --sort year
-bindsym $mod+Shift+z exec papis -s picktool rofi open
-bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
+bindsym $mod+Shift+a exec papis --set picktool rofi open --reverse 
+# bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
+bindsym $mod+d exec rofi -show drun -show-icons 
+bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+y exec gtk-pipe-viewer
-bindsym $mod+Shift+m exec pavucontrol
 bindsym $mod+Tab exec myi3lock
 bindsym $mod+BackSpace exec ./scripts/keyboard_shortcuts_cheatsheet.sh
-bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
+bindsym $mod+o exec rofi_files
+bindsym $mod+Shift+o exec rofi_files hidden
+# bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
+bindsym $mod+p exec ./Dropbox/dev/rofi-keepassxc/rofi-keepassxc -d .vault
+bindsym $mod+n [class="Simplenote"] scratchpad show
+bindsym $mod+m [class="Pavucontrol"] scratchpad show
 # END_KEYS
 
 # media
@@ -191,6 +195,8 @@ for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border
 for_window [class="Nitrogen"] floating enable sticky enable border
 for_window [class="Pavucontrol"] floating enable
+for_window [class="Pavucontrol"] move to scratchpad
+for_window [class="Simplenote"] move to scratchpad
 for_window [class="qt5ct"] floating enable sticky enable border
 for_window [class="Blueman-manager"] floating enable
 for_window [class="Arandr"] floating enable
@@ -198,9 +204,11 @@ for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
 for_window [class="Gxmessage"] floating enable
-for_window [class="Godot_*"] floating enable
+for_window [instance="Godot_Engine"] floating enable
 
-
+# Add to scratchpad
+exec --no-startup-id pavucontrol
+exec --no-startup-id simplenote
 
 ##################################
 ## Modes

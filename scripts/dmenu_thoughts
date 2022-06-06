@@ -4,21 +4,14 @@ unset LANG
 source /etc/profile.d/locale.sh
 
 DIR="/home/eyal/Dropbox/uni/research/PhD/thoughts"
+VIM_CMD="vim --servername vimd"
 
-SELECTED=$(ls -r "$DIR" | grep ^[0-9] | grep -v ~$ | cut -d "." -f 1 | uniq | \
+cd "$DIR"
+SELECTED=$(fd --strip-cwd-prefix -e tex | sort --reverse | \
 dmenu $DMENU_STYLE -i -l 30)
-
-if [ -n "$SELECTED" ]; then
-	FILES=$(ls "$DIR" | grep "$SELECTED" | grep -v ~$)
-	FILE=$(echo -e "ALL\n""$FILES" | \
-	dmenu $DMENU_STYLE -i -l 30)
-
-	if [ $FILE = 'ALL' ]; then
-		for FILE in $FILES
-		do
-			exec xdg-open "$DIR"/"$FILE" &
-		done
-	else
-		exec xdg-open "$DIR"/"$FILE"
-	fi
+FILE="$DIR"/"$SELECTED"
+if [ -f $FILE ]; then
+	exec xfce4-terminal -e "$VIM_CMD $FILE"
+else
+	exec /home/eyal/scripts/dmenu_thoughts_create
 fi

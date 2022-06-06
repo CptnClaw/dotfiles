@@ -5,14 +5,13 @@ source /etc/profile.d/locale.sh
 
 cd $HOME/Videos
 
-CATEGORY=$(fd --strip-cwd-prefix -t d \
-	| rofi -dmenu -p "$1" -i -l 10)
-	# | dmenu $DMENU_STYLE -p "$1" -i -l 30)
+CATEGORY=$(fd -t d \
+	| dmenu $DMENU_STYLE -i -l 30)
 
 if [ -d "$CATEGORY" ]; then
 	echo $CATEGORY
 	cd "$CATEGORY"
-	SELECTED=$(fd --strip-cwd-prefix -t f \
+	SELECTED=$(fd -t f \
 	-e 'mkv' \
 	-e 'mp4' \
 	-e 'wmv' \
@@ -20,18 +19,17 @@ if [ -d "$CATEGORY" ]; then
 	-e '.webm' \
 	-e 'mov' \
 	-e '.avi' \
-	 | sort | rofi -dmenu -p "$1" -i -l 30 -theme-str 'window {width:70%;}')
-	 # | sort | dmenu $DMENU_STYLE -p "$1" -i -l 30)
+	 | sort | dmenu $DMENU_STYLE -i -l 30)
 
 	if [ -f "$SELECTED" ]; then
 		echo $SELECTED
 		echo $1
-		if [ ! $1 ] || [ $1 != "nohistory" ]; then
+		if [ $1 != "nohistory" ]; then
 			echo "History mode"
 			echo $HOME/Videos/"$CATEGORY"/"$SELECTED" >> $HOME/Videos/WATCHED
 			echo $HOME/Videos/"$CATEGORY"/"$SELECTED" >> $HOME/Videos/HISTORY
 		fi
-		mpv "$SELECTED"
+		#mpv "$SELECTED"
 	fi
 fi
 

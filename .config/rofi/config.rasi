@@ -1,0 +1,22 @@
+configuration {
+  display-drun: "Applications:";
+  display-window: "Windows:";
+  drun-display-format: "{icon} {name}";
+  font: "Inconsolata Medium 13";
+  modi: "drun,run,calc,ssh";
+  show-icons: false;
+  case-sensitive: false;
+  icon-theme: "Papirus";
+  ssh-command: "{terminal} -e  \"{ssh-client} root@{host}\"";
+  kb-row-up: "Up,Control+p,ISO_Left_Tab,Control+k";
+  kb-row-down: "Down,Control+n,Control+j";
+  kb-remove-to-eol: "";
+  kb-accept-entry: "Control+l,Control+m,Return,KP_Enter";
+  kb-cancel: "Control+h,Escape";
+  kb-mode-complete: "";
+  kb-remove-char-back: "BackSpace,Shift+BackSpace";
+}
+
+@theme "theme.rasi"
+
+/* vim: ft=sass

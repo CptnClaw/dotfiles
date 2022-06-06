@@ -1,0 +1,92 @@
+
+* {
+  bg: #11121D60;
+  bg-alt-opq: #111111ff;
+  bg-alt: #444b6a60;
+  bg-sel: #11111110;
+  bg-clear: #00000000;
+
+  fg: #FFFFFF;
+  fg-alt: #bcbfdd;
+  // fg-alt: #787c99;
+
+  background-color: @bg-clear;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 50%;
+}
+
+element {
+  padding: 0 0;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-sel;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+scrollbar {
+  background-color: @bg;
+  handle-color: @bg-alt;
+}
+
+listview {
+  scrollbar: true;
+  padding: 8 12;
+  background-color: @bg;
+  columns: 1;
+  lines: 10;
+  dynamic: false;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, message, listview];
+}
+
+message {
+  background-color: @bg-alt-opq;
+  children: [textbox];
+  enabled: true;
+  padding: 8 0 8 12;
+}
+
+textbox {
+  text-color: @fg;
+  }
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+
+/* vim: ft=sass

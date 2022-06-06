@@ -1,5 +1,6 @@
 #!/bin/bash
 
+~/Dropbox/dev/rofi-keepassxc/rofi-keepassxc ~
 unset LANG
 source /etc/profile.d/locale.sh
 
@@ -20,7 +21,7 @@ if [ -d "$CATEGORY" ]; then
 	-e '.webm' \
 	-e 'mov' \
 	-e '.avi' \
-	 | sort | rofi -dmenu -p "$1" -i -l 30 -theme-str 'window {width:70%;}')
+	 | sort | rofi -dmenu -p "$1" -i -l 30)
 	 # | sort | dmenu $DMENU_STYLE -p "$1" -i -l 30)
 
 	if [ -f "$SELECTED" ]; then

@@ -5,11 +5,12 @@ source /etc/profile.d/locale.sh
 
 VID=$(xclip -out)
 VID=$(echo "$VID" | sed 's/&.*//')
-CMD=$(echo -e 'Download\nWatch' | dmenu $DMENU_STYLE -i -l 10 -p $VID)
+CMD=$(echo -e 'Download\nWatch' | rofi -dmenu -i -l 2 -p $VID)
+# CMD=$(echo -e 'Download\nWatch' | dmenu $DMENU_STYLE -i -l 10 -p $VID)
 if [ "$CMD" == "Watch" ] 
 then 
 	notify-send "starting $VID..."
-	mpv "$VID"
+	mpv --ytdl-format=ytdl "$VID"
 elif [ "$CMD" == "Download" ] 
 then
 	my_youtube_dl.sh "$VID"

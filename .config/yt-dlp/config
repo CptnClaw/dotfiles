@@ -1,1 +1,1 @@
--o "%(uploader)s - %(title)s (%(duration>%H)s:%(duration>%M)s:%(duration>%S)s).%(ext)s"
+-o "%(uploader)s - %(title)s (%(duration>%H)s:%(duration>%M)s:%(duration>%S)s).%(ext)s" -f "bestvideo[ext=mp4][height<=?1080]+bestaudio[ext=m4a]/mp4" --embed-subs --embed-thumbnail --embed-metadata --sponsorblock-remove sponsor
