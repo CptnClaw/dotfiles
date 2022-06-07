@@ -1,0 +1,4 @@
+set dbus-service true
+set synctex true
+set synctex-editor-command "vim --servername vimd --remote +%{line} %{input}"
+
