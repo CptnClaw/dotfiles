@@ -30,7 +30,6 @@ i3lock \
 --pass-media-keys     \
 --pass-volume-keys     \
 --pass-power-keys     \
---special-passthrough \
 --blur 5              \
 --clock               \
 --indicator           \
