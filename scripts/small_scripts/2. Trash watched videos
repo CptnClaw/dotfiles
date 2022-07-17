@@ -5,4 +5,5 @@ while read line; do
 	trash "$line"
 done < $HOME/Videos/WATCHED_BACKUP
 rm $HOME/Videos/WATCHED_BACKUP
+rm $HOME/Videos/youtube/*.json
 notify-send "Watched videos trashed"
