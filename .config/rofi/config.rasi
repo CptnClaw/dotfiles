@@ -8,7 +8,7 @@ configuration {
   case-sensitive: false;
   icon-theme: "Papirus";
   ssh-command: "{terminal} -e  \"{ssh-client} root@{host}\"";
-  kb-row-up: "Up,Control+p,ISO_Left_Tab,Control+k";
+  kb-row-up: "Up,Control+p,Control+k";
   kb-row-down: "Down,Control+n,Control+j";
   kb-remove-to-eol: "";
   kb-accept-entry: "Control+l,Control+m,Return,KP_Enter";
