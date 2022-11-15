@@ -72,8 +72,9 @@ set sidescroll=1
 
 
 " Copy and paste from external clipboard
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+" nnoremap <leader>y "+y
+" nnoremap <leader>p "+p
+set clipboard=unnamedplus
 
 " Press leader twice to switch between your last two buffers
 nnoremap <leader><leader> <c-^>
