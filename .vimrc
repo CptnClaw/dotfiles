@@ -108,6 +108,7 @@ nnoremap <leader>b :Buffers<CR>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'petRUShka/vim-sage'
 Plug 'KeitaNakamura/tex-conceal.vim', {'for': 'tex'} 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
