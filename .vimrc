@@ -65,6 +65,10 @@ set confirm
 " Allow jumping between buffers without saving
 set hidden
 
+" Enable undercurl for spell checking
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
+
 " Start scrolling before getting the screen edge
 set scrolloff=2
 set sidescrolloff=4
