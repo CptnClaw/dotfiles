@@ -227,7 +227,7 @@ interval = 5
 
 [module/zipcode]
 type = custom/text
-click-left = "echo 9630829 | xclip -selection clipboard"
+click-left = "echo '6299407' | xclip -selection clipboard"
 interval = 1000
 content = ""
 

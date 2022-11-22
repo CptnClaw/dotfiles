@@ -1,4 +1,4 @@
 set dbus-service true
 set synctex true
 set synctex-editor-command "nvr --servername /tmp/tex --remote +%{line} %{input}"
-
+set selection-clipboard clipboard
