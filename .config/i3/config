@@ -56,7 +56,7 @@ exec_always --no-startup-id mons -e right
 
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
-bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x vim /home/eyal/.config/i3/config 
+bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x nvim /home/eyal/.config/i3/config 
 bindsym $mod+c exec rofi -show calc -no-persist-history -no-show-match -no-sort
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox

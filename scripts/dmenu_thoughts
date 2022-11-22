@@ -4,7 +4,7 @@ unset LANG
 source /etc/profile.d/locale.sh
 
 DIR="/home/eyal/Dropbox/uni/research/PhD/thoughts"
-VIM_CMD="vim --servername vimd"
+VIM_CMD="nvim --listen /tmp/tex"
 
 cd "$DIR"
 SELECTED=$(fd --strip-cwd-prefix -e tex | sort --reverse | \

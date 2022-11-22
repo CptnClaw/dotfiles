@@ -4,8 +4,8 @@ export PATH="$PATH:\
 /home/eyal/.local/bin"
 	
 export DMENU_STYLE="-fn Ubuntu-10 -nb #1f2937 -sf #212121 -sb #82aaff -nf #dddddd -h 25"
-export VISUAL="vim"
-export EDITOR="vim"
+export VISUAL="nvim"
+export EDITOR="nvim"
 export TERM="xterm-256color"
 export TERMINAL="xfce4-terminal"
 export BROWSER=firefox
