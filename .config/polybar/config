@@ -6,14 +6,13 @@ opaquebackapprox = #1f2937
 foreground = #dddddd
 
 [bar/fullbar]
-monitor 		= DP-2 
+monitor 		= 
 width			= 100%
 height			= 25
 radius			= 0
 line-size		= 0
 bottom			= false
 fixed-center 	= false
-
 
 font-0 = "DejaVu Sans Mono:size=10;2"
 font-1 = "Feather:size=10;2"
@@ -41,41 +40,6 @@ separator =
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-[bar/altbar]
-monitor 		= DP-1 
-width			= 100%
-height			= 25
-radius			= 0
-line-size		= 0
-bottom			= false
-fixed-center 	= false
-
-
-font-0 = "DejaVu Sans Mono:size=10;2"
-font-1 = "Feather:size=10;2"
-; Font icons from:
-; https://rawgit.com/luizbills/feather-icon-font/master/demo/index.html
-
-override-redirect = false
-;offset-x = 1%
-;offset-y = 5
-screenchange-reload      = true
-throttle-output          = 5
-throttle-output-for      = 10
-throttle-input-for       = 30
-padding-left             = 1
-padding-right            = 1
-module-margin-left       = 1
-module-margin-right      = 1
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-modules-left = i3  
-modules-center = title
-modules-right =  xkeyboard2 networkspeedup networkspeeddown memory cpu pavolume networkmanager zipcode date battery
-separator =  
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [module/memory]
 type = internal/memory

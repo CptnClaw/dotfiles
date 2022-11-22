@@ -32,7 +32,7 @@ set $ws0 10:
 ##################################
 
 exec --no-startup-id pa-applet
-exec_always --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends -b
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id dropbox
 #exec --no-startup-id start_conky_maia
@@ -46,9 +46,6 @@ exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
 exec_always --no-startup-id setxkbmap -option caps:swapescape
-
-exec_always --no-startup-id setxkbmap -option grp:alt_shift_toggle -layout us,il
-exec_always --no-startup-id mons -e right
 
 ##################################
 ## Keyboard shortcuts
