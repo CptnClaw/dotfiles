@@ -54,7 +54,8 @@ exec_always --no-startup-id setxkbmap -option caps:swapescape
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x nvim /home/eyal/.config/i3/config 
-bindsym $mod+c exec rofi -show calc -no-persist-history -no-show-match -no-sort
+bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
+bindsym XF86Calculator exec rofi -show calc -no-show-match -no-sort
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
 bindsym $mod+Shift+f exec firefox --private-window
