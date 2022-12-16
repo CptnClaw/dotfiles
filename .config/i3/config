@@ -45,7 +45,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
-exec_always --no-startup-id setxkbmap -option caps:swapescape
+exec_always --no-startup-id setxkbmap -option caps:swapescape -option numpad:mac
 
 ##################################
 ## Keyboard shortcuts
