@@ -203,6 +203,8 @@ for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
 for_window [class="Gxmessage"] floating enable
 for_window [instance="Godot_Engine"] floating enable
+for_window [class="Xfce4-notifyd"] floating enable border pixel 0
+no_focus [class="Xfce4-notifyd"] 
 
 # Add to scratchpad
 exec --no-startup-id pavucontrol
