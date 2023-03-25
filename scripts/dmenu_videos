@@ -5,9 +5,9 @@ source /etc/profile.d/locale.sh
 
 cd $HOME/Videos
 
-CATEGORY=$(fd --strip-cwd-prefix -t d \
+CATEGORIES=$(fd --strip-cwd-prefix -t d --max-depth 1)
+CATEGORY=$(echo "$CATEGORIES"\
 	| rofi -dmenu -p "$1" -i -l 10)
-	# | dmenu $DMENU_STYLE -p "$1" -i -l 30)
 
 if [ -d "$CATEGORY" ]; then
 	echo $CATEGORY
