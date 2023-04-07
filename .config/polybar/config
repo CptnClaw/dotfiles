@@ -99,7 +99,7 @@ pin-workspace = false
 index-sort = true
 
 enable-click = true
-enable-scroll = true
+enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
 format = <label-state> <label-mode>
