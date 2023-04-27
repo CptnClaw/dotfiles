@@ -72,7 +72,7 @@ bindsym $mod+Shift+s exec dmenu_small_scripts
 bindsym $mod+Shift+e exec dmenu_bookmarks
 bindsym $mod+Shift+b exec dmenu_bluetooth -d
 bindsym $mod+b exec dmenu_bluetooth
-bindsym $mod+Shift+a exec papis --set picktool rofi open --reverse 
+bindsym $mod+Shift+a exec python ./Dropbox/dev/rofi-zotero/rofi-zotero.py
 # bindsym $mod+d exec env LANG=en_US.UTF-8 dmenu_run $DMENU_STYLE
 bindsym $mod+d exec rofi -show drun -show-icons 
 bindsym $mod+Shift+d exec rofi -show run
