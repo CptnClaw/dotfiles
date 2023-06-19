@@ -33,6 +33,7 @@ alias rm="rm -vI"				#  a bit safer rm
 alias df="df -h"				#  human-readable sizes
 alias free="free -h"			#  human-readable sizes
 
+alias term="xfce4-terminal"
 alias yay="yay --answerdiff All"
 alias clip="xclip -selection c"
 alias spelling='aspell -c -t'
