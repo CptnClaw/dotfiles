@@ -45,6 +45,18 @@ augroup texspell
 	autocmd FileType tex setlocal spell spelllang=en_us
 augroup END
 
+" C code compilation
+augroup ccode
+	autocmd!
+	autocmd FileType c setlocal makeprg=clang\ %\ -std=c11\ -Wall\ -o\ %<
+	autocmd FileType c setlocal autowrite
+augroup END
+nnoremap <F4> :make<CR>
+nnoremap <F5> :make \| :!./%<<CR>
+nnoremap cn <Plug>(qf_qf_next)
+nnoremap cp <Plug>(qf_qf_previous)
+nnoremap co <Plug>(qf_qf_toggle)
+
 " Relative line numbers
 set number relativenumber
 
@@ -76,8 +88,6 @@ set sidescroll=1
 
 
 " Copy and paste from external clipboard
-" nnoremap <leader>y "+y
-" nnoremap <leader>p "+p
 set clipboard=unnamedplus
 
 " Press leader twice to switch between your last two buffers
@@ -132,8 +142,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'takac/vim-hardtime' 
 Plug 'gruvbox-community/gruvbox'
 Plug 'papis/papis-vim'
+Plug 'akinsho/toggleterm.nvim'
+Plug 'romainl/vim-qf'
 call plug#end()
 let g:hardtime_default_on = 0
+
+" Terminal toggle mappings
+nnoremap <C-t> :ToggleTerm<CR>a
+tnoremap <C-t> <C-\><C-n>:ToggleTerm<CR>
+tnoremap <Esc> <C-\><C-n>
 
 " coc config
 source /home/eyal/.vim/coc-config.vim
