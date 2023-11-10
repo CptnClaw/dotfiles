@@ -48,11 +48,12 @@ augroup END
 " C code compilation
 augroup ccode
 	autocmd!
-	autocmd FileType c setlocal makeprg=clang\ %\ -std=c11\ -Wall\ -o\ %<
+	" autocmd FileType c setlocal makeprg=clang\ %\ -std=c11\ -Wall\ -o\ %<
 	autocmd FileType c setlocal autowrite
 augroup END
-nnoremap <F4> :make<CR>
-nnoremap <F5> :make \| :!./%<<CR>
+nnoremap <F4> :make build<CR>
+" nnoremap <F5> :make \| :!./%<<CR>
+nnoremap <F5> :make run<CR>
 nnoremap cn <Plug>(qf_qf_next)
 nnoremap cp <Plug>(qf_qf_previous)
 nnoremap co <Plug>(qf_qf_toggle)
