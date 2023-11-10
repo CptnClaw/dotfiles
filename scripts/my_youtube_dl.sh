@@ -1,7 +1,8 @@
 #!/bin/bash
 
 VID=$1
-OUTDIR="$HOME"/Videos/youtube/
+LABEL=$2
+OUTDIR="$HOME"/Videos/youtube/"$LABEL"
 OUTFORMAT="%(uploader)s - %(title)s (%(duration>%H)s:%(duration>%M)s:%(duration>%S)s).%(ext)s"
 
 notify-send "downloading $VID..."

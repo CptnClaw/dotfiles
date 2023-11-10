@@ -5,7 +5,7 @@ source /etc/profile.d/locale.sh
 
 VID=$(xclip -out)
 VID=$(echo "$VID" | sed 's/&.*//')
-CMD=$(echo -e 'Download\nWatch' | rofi -dmenu -i -l 2 -p $VID)
+CMD=$(echo -e 'Download\nDownload with label\nWatch' | rofi -dmenu -i -l 3 -p $VID)
 # CMD=$(echo -e 'Download\nWatch' | dmenu $DMENU_STYLE -i -l 10 -p $VID)
 if [ "$CMD" == "Watch" ] 
 then 
@@ -14,5 +14,11 @@ then
 elif [ "$CMD" == "Download" ] 
 then
 	my_youtube_dl.sh "$VID"
+elif [ "$CMD" == "Download with label" ] 
+then
+	cd /home/eyal/Videos/youtube
+	LABEL=$(fd --type directory | rofi -dmenu -p "Enter label")
+	mkdir -p "$LABEL"
+	my_youtube_dl.sh "$VID" "$LABEL"
 fi
 
