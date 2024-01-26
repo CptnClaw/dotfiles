@@ -32,17 +32,16 @@ set $ws0 10:
 ##################################
 
 exec --no-startup-id pa-applet
-exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id dropbox
-#exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 20 -locker myi3lock
 exec --no-startup-id xmousepasteblock
 exec --no-startup-id i3-msg 'workspace number $ws7; exec xfce4-terminal --hide-menubar -x newsboat; workspace number $ws1'
-#exec --no-startup-id i3-msg 'workspace number $ws8; exec xfce4-terminal --hide-menubar -x yt; workspace number $ws1'
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id unset LANG; source /etc/profile.d/locale.sh
+exec_always --no-startup-id $HOME/scripts/handle_monitors.sh
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
 exec --no-startup-id xmodmap /home/eyal/.Xmodmap
