@@ -38,11 +38,5 @@ i3lock \
 --keylayout 2         \
 --ignore-empty-password \
 --radius=95 \
+--nofork
 
-# --veriftext="Drinking verification can..."
-# --wrongtext="Nope!"
-# --textsize=20
-# --modsize=10
-# --timefont=comic-sans
-# --datefont=monofur
-# etc

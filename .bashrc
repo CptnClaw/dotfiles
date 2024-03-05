@@ -39,7 +39,7 @@ alias clip="xclip -selection c"
 alias spelling='aspell -c -t'
 alias configit='/usr/bin/git --git-dir=$HOME/dotfiles.git/ --work-tree=$HOME' 
 alias yt='XDG_CONFIG_HOME=/home/eyal/.youtube XDG_DATA_HOME=/home/eyal/.youtube newsboat'
-
+alias vimtex='nvim --listen /tmp/tex'
 
 # Fix Locale
 unset LANG 
