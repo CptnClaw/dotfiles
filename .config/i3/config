@@ -46,6 +46,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id xset -b
 exec --no-startup-id xmodmap /home/eyal/.Xmodmap
 exec --no-startup-id fcitx5 -d
+exec_always --no-startup-id autotiling
 
 ##################################
 ## Keyboard shortcuts
@@ -54,7 +55,7 @@ exec --no-startup-id fcitx5 -d
 # START_KEYS
 bindsym $mod+Return exec xfce4-terminal --hide-menubar
 bindsym $mod+Shift+c exec xfce4-terminal --hide-menubar -x nvim /home/eyal/.config/i3/config 
-bindsym $mod+c exec rofi -show calc -no-show-match -no-sort
+bindsym $mod+c exec rofi -show calc -no-show-match -no-sort -theme arthur
 bindsym XF86Calculator exec rofi -show calc -no-show-match -no-sort
 #bindsym $mod+f exec env GTK_THEME=Arc firefox
 bindsym $mod+f exec firefox
@@ -83,7 +84,8 @@ bindsym $mod+Shift+o exec rofi_files hidden
 # bindsym $mod+o exec xfce4-terminal --title=fzf -e "bash -lic open_with_fzf_once"
 bindsym $mod+p exec ./Dropbox/dev/rofi-keepassxc/rofi-keepassxc -d .vault
 bindsym $mod+n [class="Simplenote"] scratchpad show
-bindsym $mod+m [class="Pavucontrol"] scratchpad show
+bindsym $mod+m [class="pavucontrol"] scratchpad show
+bindsym $mod+z exec open_files.sh /home/eyal/try
 # END_KEYS
 
 # media
@@ -192,8 +194,8 @@ for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable sticky enable border
 for_window [class="Nitrogen"] floating enable sticky enable border
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Pavucontrol"] move to scratchpad
+for_window [class="pavucontrol"] floating enable
+for_window [class="pavucontrol"] move to scratchpad
 for_window [class="Simplenote"] move to scratchpad
 for_window [class="qt5ct"] floating enable sticky enable border
 for_window [class="Blueman-manager"] floating enable
@@ -202,6 +204,9 @@ for_window [class="zoom"] floating enable
 for_window [title="nmtui"] floating enable
 for_window [class="sameboy"] floating enable
 for_window [class="Gxmessage"] floating enable
+for_window [class="Polyscope"] floating enable
+for_window [class="VirtualBox"] floating enable
+for_window [class="VirtualBox Manager"] floating disable
 for_window [instance="Godot_Engine"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable border pixel 0
 no_focus [class="Xfce4-notifyd"] 
