@@ -208,6 +208,7 @@ for_window [class="Polyscope"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="VirtualBox Manager"] floating disable
 for_window [instance="Godot_Engine"] floating enable
+for_window [class="playgroundgl"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable border pixel 0
 no_focus [class="Xfce4-notifyd"] 
 

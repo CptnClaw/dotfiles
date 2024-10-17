@@ -1,7 +1,8 @@
 export PATH="$PATH:\
 /home/eyal/scripts:\
 /home/eyal/scripts/small_scripts:\
-/home/eyal/.local/bin"
+/home/eyal/.local/bin:\
+/opt/intel/oneapi/vtune/latest/bin64"
 	
 export DMENU_STYLE="-fn Ubuntu-10 -nb #1f2937 -sf #212121 -sb #82aaff -nf #dddddd -h 25"
 export VISUAL="nvim"
@@ -15,6 +16,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
