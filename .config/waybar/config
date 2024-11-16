@@ -19,6 +19,7 @@
     "modules-right": [
 		"hyprland/language",
         "pulseaudio",
+		"backlight",
         "network",
         "clock",
         "battery",
