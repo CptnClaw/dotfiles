@@ -113,7 +113,7 @@ inoremap <c-w> <c-g>u<c-w>
 vnoremap < <gv
 vnoremap > >gv
 
-" Substitute command
+" Substitute command (find and replace)
 nnoremap <leader>s :%s///gc<Left><Left><Left><Left>
 
 " Tab navigation
@@ -145,6 +145,10 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'papis/papis-vim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'romainl/vim-qf'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'rebelot/kanagawa.nvim'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'yorickpeterse/nvim-grey'
 call plug#end()
 let g:hardtime_default_on = 0
 
@@ -163,6 +167,9 @@ let g:tex_conceal_frac=1
 let g:tex_conceal="abdgm"
 set conceallevel=2
 
+" Tex outline
+nnoremap <leader>c :VimtexTocOpen<CR>
+
 " NERDTree
 function! ToggleNERDTree()
 	NERDTreeToggle
@@ -173,7 +180,7 @@ nnoremap <leader>n :call ToggleNERDTree()<CR>
 
 " Colors
 syntax on
-colorscheme gruvbox
+colorscheme molokai
 set background=dark
 "highlight CursorLine cterm=NONE ctermbg=Black
 "highlight Visual ctermbg=Blue

@@ -18,7 +18,7 @@ bind '"\C-o":"open_with_fzf\n"'
 
 
 # Environment Variables
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 
