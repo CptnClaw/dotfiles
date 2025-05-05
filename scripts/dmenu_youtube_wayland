@@ -1,0 +1,25 @@
+#!/bin/bash
+
+unset LANG
+source /etc/profile.d/locale.sh
+
+VID=$(wl-paste)
+echo $VID
+VID=$(echo "$VID" | sed 's/&.*//')
+CMD=$(echo -e 'Download\nDownload with label\nWatch' | rofi -dmenu -i -l 3 -p $VID)
+# CMD=$(echo -e 'Download\nWatch' | dmenu $DMENU_STYLE -i -l 10 -p $VID)
+if [ "$CMD" == "Watch" ] 
+then 
+	notify-send "starting $VID..."
+	mpv --ytdl-format=ytdl "$VID"
+elif [ "$CMD" == "Download" ] 
+then
+	my_youtube_dl.sh "$VID"
+elif [ "$CMD" == "Download with label" ] 
+then
+	cd /home/eyal/Videos/youtube
+	LABEL=$(fd --type directory | rofi -dmenu -p "Enter label")
+	mkdir -p "$LABEL"
+	my_youtube_dl.sh "$VID" "$LABEL"
+fi
+
